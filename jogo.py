@@ -2,6 +2,8 @@ import pygame
 from config import Config
 from jogador import Jogador
 from sys import exit
+from pytmx.util_pygame import load_pygame
+from os.path import join
 
 class Jogo:
     def __init__(self):
@@ -26,7 +28,15 @@ class Jogo:
         self.todosSprites = pygame.sprite.Group(self.jogador)
         self.rodando = True
         print("Jogo: Instância Jogo criada.")
-
+        
+        self.importar_assets()
+    
+    
+    def importar_assets(self):
+        self.tmx_mapa = {'mundo': load_pygame(join('mundo.tmx'))}
+        print(self.tmx_mapa)
+        
+        
     def executar(self):
         while self.rodando:
             for evento in pygame.event.get():
