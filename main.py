@@ -1,4 +1,4 @@
-from configuracoes import *
+""" from configuracoes import *
 from pytmx.util_pygame import load_pygame
 from os.path import join
 
@@ -27,4 +27,35 @@ class Jogo:
 
 if __name__ == '__main__':
     jogo = Jogo()
-    jogo.corre()
+    jogo.corre() """
+
+import pygame
+from config import Config
+
+class Jogo:
+    def __init__(self):
+        print("TO TESTANDO AMIGA")
+        pygame.init()
+        self.config = Config()
+
+        self.superficie = pygame.display.set_mode((self.config.janela_largura, self.config.janela_altura))
+
+        pygame.display.set_caption('Profmoon: Crônicas Acadêmicas')
+
+        print("FUNCIONOU????")
+
+    def inicia(self):
+        roda = True
+        while roda:
+            for evento in pygame.event.get():
+                if evento.type == pygame.QUIT:
+                    roda = False
+
+            
+        print("CABOU AMIGA TO INDO DORMIR")
+        pygame.quit()
+        exit()
+
+if __name__ == '__main__':
+    jogo = Jogo()
+    jogo.inicia()
