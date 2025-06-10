@@ -2,7 +2,7 @@
 from pygame.math import Vector2 as vector
 from sys import exit
 
-janela_largura, janela_altura = 1280, 720
+larguraJanela, alturaJanela = 1280, 720
 tile_size = 64
 velocidade_animacao = 6
 battle_outline_width = 4
@@ -28,23 +28,37 @@ battle_choices = {
 } """
 
 class Config:
-    def __init__(self, janela_largura=1280, janela_altura=720):
-        self.__janela_largura = janela_largura
-        self.__janela_altura = janela_altura
+    def __init__(self, larguraJanela=1280, alturaJanela=720, tamSpritePad=64):
+        self.__larguraJanela = larguraJanela
+        self.__alturaJanela = alturaJanela
+        self.__tamSpritePad = tamSpritePad
 
     @property
-    def janela_largura(self):
-        return self.__janela_largura
+    def larguraJanela(self):
+        return self.__larguraJanela
 
-    @janela_largura.setter
-    def janela_largura(self, value):
-        self.__janela_largura = value
+    @larguraJanela.setter
+    def larguraJanela(self, value):
+        self.__larguraJanela = value
 
     @property
-    def janela_altura(self):
-        return self.__janela_altura
+    def alturaJanela(self):
+        return self.__alturaJanela
 
-    @janela_altura.setter
-    def janela_altura(self, value):
-        self.__janela_altura = value
+    @alturaJanela.setter
+    def alturaJanela(self, value):
+        self.__alturaJanela = value
+
+    @property
+    def tamSpritePad(self):
+        return self.__tamSpritePad
+    
+    @tamSpritePad.setter
+    def tamSpritePad(self, value):
+        self.__tamSpritePad = value
+
+    def __del__(self):
+        print("poh deu moh trabalho fazer essa classe Config e você a matou >:(")
+
+    
 
