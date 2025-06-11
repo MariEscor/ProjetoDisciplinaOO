@@ -1,148 +1,74 @@
-#25-06-11 04h39 ok
 import pygame
-from config import Config
-from jogador import Jogador
 from sys import exit
 from pytmx.util_pygame import load_pygame
 from os.path import join
 
+from config import Config
+from sprite import Sprite
+from allsprites import AllSprites
+from entidades import Player
+
 class Jogo:
-    def __init__(self) -> None:
+    def __init__(self):
         print("Inicializando a obra de arte que merece tomar nota total do projeto...")
         print("Se não funcionar, é culpa do professor, não minha.")
         pygame.init()
 
-        #encapsulamento
-        self.__config = Config()
-        self.__superficie_exibicao = pygame.display.set_mode((self.__config.largura_janela, self.__config.altura_janela))
-        self.__jogador = None
-        self.__todos_sprites = None
-        self.__rodando = True
-        self.__mapa_tmx = {}
+        self.config = Config()
+
+        self.superficieExib = pygame.display.set_mode((self.config.larguraJanela, self.config.alturaJanela))
 
         pygame.display.set_caption('Profmoon: Crônicas Acadêmicas')
+        self.clock = pygame.time.Clock()
 
-        print(f"Janela criada: {self.__config.largura_janela}x{self.__config.altura_janela} pixels.")
+        #grupos
+        self.todosSprites = AllSprites(self.config)
 
-        posicao_inicial_x = self.__config.largura_janela // 2 - self.__config.tam_sprite_padrao // 2
-        posicao_inicial_y = self.__config.altura_janela // 2 - self.__config.tam_sprite_padrao // 2
-        print(f"Posição inicial do jogador: ({posicao_inicial_x}, {posicao_inicial_y})")
-
-        self.__jogador = Jogador((posicao_inicial_x, posicao_inicial_y), self.__config.tam_sprite_padrao)
-        self.__todos_sprites = pygame.sprite.Group(self.__jogador)
-
-        print("Jogo: Instância Jogo criada.")
+        self.rodando = True
         
-        self.__importar_assets()
-        
-    @property
-    def config(self) -> Config:
-        return self.__config
-    
-    @config.setter
-    def config(self, value: Config) -> None:
-        if isinstance(value, Config):
-            self.__config = value
-        else:
-            raise TypeError("Config deve ser uma instância da classe Config.")
-
-    @property
-    def superficie_exibicao(self) -> pygame.Surface:
-        return self.__superficie_exibicao
-    
-    @superficie_exibicao.setter
-    def superficie_exibicao(self, value: pygame.Surface) -> None:
-        if isinstance(value, pygame.Surface):
-            self.__superficie_exibicao = value
-        else:
-            raise TypeError("Superfície de exibição deve ser uma instância de pygame.Surface.")
-        
-    @property
-    def jogador(self) -> Jogador:
-        return self.__jogador
-    
-    @jogador.setter
-    def jogador(self, value: Jogador) -> None:
-        if isinstance(value, Jogador):
-            self.__jogador = value
-        else:
-            raise TypeError("Jogador deve ser uma instância da classe Jogador.")
-        
-    @property
-    def todos_sprites(self) -> pygame.sprite.Group:
-        return self.__todos_sprites
-    
-    @todos_sprites.setter
-    def todos_sprites(self, value: pygame.sprite.Group) -> None:
-        if isinstance(value, pygame.sprite.Group):
-            self.__todos_sprites = value
-        else:
-            raise TypeError("Todos sprites deve ser uma instância de pygame.sprite.Group.")
-        
-    @property
-    def rodando(self) -> bool:
-        return self.__rodando
-    
-    @rodando.setter
-    def rodando(self, value: bool) -> None:
-        if isinstance(value, bool):
-            self.__rodando = value
-        else:
-            raise TypeError("Rodando deve ser um valor booleano.")
-        
-    @property
-    def mapa_tmx(self) -> dict:
-        return self.__mapa_tmx
-    
-    @mapa_tmx.setter
-    def mapa_tmx(self, value: dict) -> None:
-        if isinstance(value, dict):
-            self.__mapa_tmx = value
-        else:
-            raise TypeError("Mapa TMX deve ser um dicionário.")
-        
+        self.importar_assets()
+        self.setup(self.tmx_mapa['hospital'], 'world')
     
 
-    """ 
     def importar_assets(self):
-        self.tmx_mapa = {'mundo': load_pygame(join('mundo.tmx'))}
-        print(self.tmx_mapa) 
+        self.tmx_mapa = {
+            'mundo': load_pygame('mundo/mundo.tmx'),
+            'hospital': load_pygame('maps/hospital.tmx')
+            }
         
-        def __importar_assets(self) -> None:
-                
-        try:            
-            self.__mapa_tmx['mundo'] = load_pygame(join('assets', 'maps', 'mundo.tmx'))
-            print("Mapa 'mundo.tmx' carregado com sucesso!")
-        except Exception as e:
-            print(f"Erro ao carregar mapa TMX: {e}")
-            print("Verifique se 'mundo.tmx' está em 'assets/maps'.")
-            pygame.quit()
-            exit()
 
-        """
+    def setup(self, tmx_map, jogador_posicao_inicio):
+        #terreno
+        for x, y, superficie in tmx_map.get_layer_by_name('Terreno').tiles():
+            Sprite((x * tmx_map.tilewidth, y * tmx_map.tileheight), superficie, self.todosSprites)
         
-    def executar(self) -> None:
-        while self.__rodando:
-            self.__processar_eventos()
-            self.__atualizar_estado()
-            self.__renderizar()
+        #objetos
+        for objeto in tmx_map.get_layer_by_name('Objetos'):
+            Sprite((objeto.x, objeto.y), objeto.image, self.todosSprites)
+
+        #entidades
+        for objeto in tmx_map.get_layer_by_name('Entidades'):
+            if objeto.name == 'Player' and objeto.properties['pos'] == jogador_posicao_inicio:
+                self.player = Player((objeto.x, objeto.y), self.todosSprites, tamanho = self.config.tamSpritePad)
+
+
+    def executar(self):
+        while self.rodando:
+            diferenca_tempo = self.clock.tick() / 1000
+
+            for evento in pygame.event.get():
+                if evento.type == pygame.QUIT:
+                    self.rodando = False
+
+            #logica jogo
+            self.superficieExib.fill('black')
+            self.todosSprites.update(diferenca_tempo)
+            self.todosSprites.draw(self.player.rect.center)
+            pygame.display.update()
 
         print("Fechando o jogo...")
         pygame.quit()
         exit()
 
-    def __processar_eventos(self) -> None:
-        for evento in pygame.event.get():
-            if evento.type == pygame.QUIT:
-                self.__rodando = False
-            
-    def __atualizar_estado(self) -> None:
-        self.__todos_sprites.update()
-
-    def __renderizar(self) -> None:
-        self.__superficie_exibicao.fill((0, 0, 0))
-        self.__todos_sprites.draw(self.__superficie_exibicao)
-        pygame.display.update()
-
-    def __del__(self) :
+    def __del__(self):
         print("VOCÊ DEIXOU TUDO SER DESTRUIDO NA CLASSE Jogo >:(")
