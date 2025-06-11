@@ -33,27 +33,33 @@ class Config:
         self.__tam_sprite_padrao = tam_sprite_padrao
 
     @property
-    def largura_janela(self):
+    def largura_janela(self) -> int:
         return self.__largura_janela
 
     @largura_janela.setter
-    def largura_janela(self, value):
+    def largura_janela(self, value: int) -> None:
+        if not isinstance(value, int) or value <= 0:
+            raise ValueError("Largura da janela deve ser um inteiro positivo.")
         self.__largura_janela = value
 
     @property
-    def altura_janela(self):
+    def altura_janela(self) -> int:
         return self.__altura_janela
 
     @altura_janela.setter
-    def altura_janela(self, value):
+    def altura_janela(self, value: int) -> None:
+        if not isinstance(value, int) or value <= 0:
+            raise ValueError("Altura da janela deve ser um inteiro positivo.")
         self.__altura_janela = value
 
     @property
-    def tam_sprite_padrao(self):
+    def tam_sprite_padrao(self) -> int:
         return self.__tam_sprite_padrao
     
     @tam_sprite_padrao.setter
-    def tam_sprite_padrao(self, value):
+    def tam_sprite_padrao(self, value: int) -> None:
+        if not isinstance(value, int) or value <= 0:
+            raise ValueError("Tamanho do sprite padrão deve ser um inteiro positivo.")
         self.__tam_sprite_padrao = value
 
     def __del__(self):
