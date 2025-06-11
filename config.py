@@ -26,6 +26,8 @@ battle_choices = {
     
 } """
 
+#2025-06-11 14h10 ok
+
 class Config:
     def __init__(self, largura_janela = 1280, altura_janela=720, tam_sprite_padrao=64):
         self.__largura_janela = largura_janela
