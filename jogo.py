@@ -13,28 +13,28 @@ class Jogo:
 
         self.config = Config()
 
-        self.superficieExib = pygame.display.set_mode((self.config.larguraJanela, self.config.alturaJanela))
+        self.superficieExib = pygame.display.set_mode((self.config.largura_janela, self.config.altura_janela))
 
         pygame.display.set_caption('Profmoon: Crônicas Acadêmicas')
 
-        print(f"Janela criada: {self.config.larguraJanela}x{self.config.alturaJanela} pixels.")
+        print(f"Janela criada: {self.config.largura_janela}x{self.config.altura_janela} pixels.")
 
-        posicaoInicialX = self.config.larguraJanela // 2 - self.config.tamSpritePad // 2
-        posicaoInicialY = self.config.alturaJanela // 2 - self.config.tamSpritePad // 2
+        posicaoInicialX = self.config.largura_janela // 2 - self.config.tam_sprite_padrao // 2
+        posicaoInicialY = self.config.altura_janela // 2 - self.config.tam_sprite_padrao // 2
         print(f"Posição inicial do jogador: ({posicaoInicialX}, {posicaoInicialY})")
 
-        self.jogador = Jogador((posicaoInicialX, posicaoInicialY), self.config.tamSpritePad)
+        self.jogador = Jogador((posicaoInicialX, posicaoInicialY), self.config.tam_sprite_padrao)
 
         self.todosSprites = pygame.sprite.Group(self.jogador)
         self.rodando = True
         print("Jogo: Instância Jogo criada.")
         
-        self.importar_assets()
+        """ self.importar_assets()
     
     
     def importar_assets(self):
         self.tmx_mapa = {'mundo': load_pygame(join('mundo.tmx'))}
-        print(self.tmx_mapa)
+        print(self.tmx_mapa) """
         
         
     def executar(self):

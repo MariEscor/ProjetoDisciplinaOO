@@ -2,7 +2,6 @@
 from pygame.math import Vector2 as vector
 from sys import exit
 
-larguraJanela, alturaJanela = 1280, 720
 tile_size = 64
 velocidade_animacao = 6
 battle_outline_width = 4
@@ -28,37 +27,34 @@ battle_choices = {
 } """
 
 class Config:
-    def __init__(self, larguraJanela=1280, alturaJanela=720, tamSpritePad=64):
-        self.__larguraJanela = larguraJanela
-        self.__alturaJanela = alturaJanela
-        self.__tamSpritePad = tamSpritePad
+    def __init__(self, largura_janela = 1280, altura_janela=720, tam_sprite_padrao=64):
+        self.__largura_janela = largura_janela
+        self.__altura_janela = altura_janela
+        self.__tam_sprite_padrao = tam_sprite_padrao
 
     @property
-    def larguraJanela(self):
-        return self.__larguraJanela
+    def largura_janela(self):
+        return self.__largura_janela
 
-    @larguraJanela.setter
-    def larguraJanela(self, value):
-        self.__larguraJanela = value
-
-    @property
-    def alturaJanela(self):
-        return self.__alturaJanela
-
-    @alturaJanela.setter
-    def alturaJanela(self, value):
-        self.__alturaJanela = value
+    @largura_janela.setter
+    def largura_janela(self, value):
+        self.__largura_janela = value
 
     @property
-    def tamSpritePad(self):
-        return self.__tamSpritePad
+    def altura_janela(self):
+        return self.__altura_janela
+
+    @altura_janela.setter
+    def altura_janela(self, value):
+        self.__altura_janela = value
+
+    @property
+    def tam_sprite_padrao(self):
+        return self.__tam_sprite_padrao
     
-    @tamSpritePad.setter
-    def tamSpritePad(self, value):
-        self.__tamSpritePad = value
+    @tam_sprite_padrao.setter
+    def tam_sprite_padrao(self, value):
+        self.__tam_sprite_padrao = value
 
     def __del__(self):
-        print("poh deu moh trabalho fazer essa classe Config e você a matou >:(")
-
-    
-
+        print("poh deu moh trabalho fazer essa classe Config e você a matou >:(") 
