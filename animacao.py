@@ -1,6 +1,6 @@
 import pygame
 
-class Animacao(pygame.sprite.Sprite) -> None:
+class Animacao(pygame.sprite.Sprite):
     def __init__(self, posicao: tuple, quadros: dict, estado_inicial: str, direcao_inicial: str, velocidade_animacao: float):
         super().__init__()
         self.__quadros = quadros
