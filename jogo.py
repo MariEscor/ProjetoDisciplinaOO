@@ -6,7 +6,7 @@ from os.path import join
 from config import Config
 from sprite import Sprite
 from allsprites import AllSprites
-from entidades import Player
+from entidade import Player
 
 class Jogo:
     def __init__(self):
