@@ -40,4 +40,4 @@ class Entidade(Animacao):
         self.mover(dt)
 
     def __del__(self) -> None:
-        print("Será que foi a entidade foi destruída?")
+        print("Será que foi a entidade foi destruída ou ela ainda ta aqui pra te assombrar?")
