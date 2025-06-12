@@ -1,4 +1,4 @@
-#25-06-11 23h30 ok
+#2025-06-11 23h30 ok
 import pygame
 
 class Animacao(pygame.sprite.Sprite):
