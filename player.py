@@ -1,6 +1,5 @@
 #2025-06-12 02h26
 import pygame
-from sys import exit
 from entidade import Entidade
 from pygame.math import Vector2 as vector
 
