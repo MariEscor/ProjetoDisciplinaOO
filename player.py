@@ -7,7 +7,7 @@ from pygame.math import Vector2 as vector
 class Player(Entidade):
     def __init__(self, posicao: tuple, quadros: dict, estado_inicial: str, direcao_inicial: str, velocidade_animacao: float, velocidade_movimento: float) -> None:
         super().__init__(posicao, quadros, estado_inicial, direcao_inicial, velocidade_animacao, velocidade_movimento)
-        print("Cê deu a luz ao Jogador")
+        print("Cê deu a luz ao Player")
 
     def input(self) -> None:
         chaves = pygame.key.get_pressed()
@@ -36,4 +36,4 @@ class Player(Entidade):
         super().update(dt)
 
     def __del__(self):
-        print("CÊ MATOU O JOGADOR >:(")
+        print("CÊ MATOU O PLAYER >:(")
