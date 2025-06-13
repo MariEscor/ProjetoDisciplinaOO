@@ -1,20 +1,4 @@
-""" import pygame - passei
-from pygame.math import Vector2 as vector - passei
-
-class AllSprites(pygame.sprite.Group): - passei
-    def __init__(self, config): - passei
-        super().__init__() - passei
-        self.config = config - passei
-        self.display_surface = pygame.display.get_surface() - passei
-        self.offset = vector(100, 20) - passei
-
-    def draw(self, player_center): - passei
-        self.offset.x = -(player_center[0] - self.config.larguraJanela / 2) - passei
-        self.offset.y = -(player_center[1] - self.config.alturaJanela / 2) - passei
-
-        for sprite in self.sprites(): - passei
-            self.display_surface.blit(sprite.image, sprite.rect.topleft + self.offset) - passei """
-
+#2025-06-12 17h49
 import pygame
 from pygame.math import Vector2 as vector
 from config import Config
