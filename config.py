@@ -1,7 +1,7 @@
 #2025-06-11 23h35 ok
 
 class Config:
-    def __init__(self, largura_janela = 1280, altura_janela = 720, tam_sprite_padrao = 64):
+    def __init__(self, largura_janela = 1280, altura_janela = 720, tam_sprite_padrao = 100):
         self.__largura_janela = largura_janela
         self.__altura_janela = altura_janela
         self.__tam_sprite_padrao = tam_sprite_padrao
