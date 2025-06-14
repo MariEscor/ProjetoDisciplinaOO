@@ -1,10 +1,28 @@
-#2025-06-11 23h35 ok
+#2025-06-13 ok
 
 class Config:
-    def __init__(self, largura_janela = 1280, altura_janela = 720, tam_sprite_padrao = 100):
+    def __init__(self, largura_janela = 1280, altura_janela = 720, tam_sprite_padrao = 64):
         self.__largura_janela = largura_janela
         self.__altura_janela = altura_janela
         self.__tam_sprite_padrao = tam_sprite_padrao
+
+    CORES = {
+        'white': '#f4fefa', 
+        'pure white': '#ffffff',
+        'dark': '#2b292c',
+        'light': '#c8c8c8',
+        'gray': '#3a373b',
+        'gold': '#ffd700',
+        'light-gray': '#4b484d',
+        'fire':'#f8a060',
+        'water':'#50b0d8',
+        'plant': '#64a990', 
+        'black': '#000000', 
+        'red': '#f03131',
+        'blue': '#66d7ee',
+        'normal': '#ffffff',
+        'dark white': '#f0f0f0'
+    }  
 
     @property
     def largura_janela(self) -> int:

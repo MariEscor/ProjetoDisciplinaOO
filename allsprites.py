@@ -1,12 +1,14 @@
-#2025-06-12 17h49
+#2025-06-13 02h09
 import pygame
 from pygame.math import Vector2 as vector
 from config import Config
+from player import Player
 
 class AllSprites(pygame.sprite.Group):
-    def __init__(self, config: Config) -> None:
+    def __init__(self, config: Config, player: Player) -> None:
         super().__init__()
         self.__config = config
+        self.__player = player
         self.__display_surface = pygame.display.get_surface()
         self.__offset = vector(100, 20)
 
@@ -19,6 +21,17 @@ class AllSprites(pygame.sprite.Group):
         if not isinstance(value, Config):
             raise TypeError("Config tem que vir da classe Config")
         self.__config = value
+
+    @property
+    def player(self) -> Player:
+        return self.__player
+    
+    @player.setter
+    def player(self, value: Player) -> None:
+        if not isinstance(value, Player):
+            raise TypeError("Player tem que ser uma instância da classe Player.")
+        self.__player = value
+
 
     @property
     def display_surface(self) -> pygame.Surface:
@@ -40,12 +53,12 @@ class AllSprites(pygame.sprite.Group):
             raise TypeError("offset tem que ser um objeto do tipo vector")
         self.__offset = value
 
-    def draw(self, player_center: tuple) -> None:
-        self.__offset.x = -(player_center[0] - self.__config.largura_janela / 2)
-        self.__offset.y = -(player_center[1] - self.__config.altura_janela / 2)
+    def draw(self) -> None:
+        self.__offset.x = -(self.__player.rect.center[0] - self.__config.largura_janela / 2)
+        self.__offset.y = -(self.__player.rect.center[1] - self.__config.altura_janela / 2)
         
         for sprite in self.sprites():
             self.__display_surface.blit(sprite.image, sprite.rect.topleft + self.__offset)
 
     def __del__(self) -> None:
-        print("Todos os sprites foram destruídos, mas a memória deles ainda está viva... ou não.")
+        print("Criei isso aqui 2h49 da madrugada, to sem criatividade pro del de AllSprites. Imagina algo dramatico.")
