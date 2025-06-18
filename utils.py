@@ -1,9 +1,8 @@
-# utils.py (ou suporte_utilidades.py)
 import pygame
-from os.path import join, isfile
-from os import walk, listdir
+from os.path import join
+from os import walk
 from pytmx.util_pygame import load_pygame
-from typing import Any # Importar Any para anotações de tipo, se necessário
+from typing import Any 
 
 class Utils:
 
