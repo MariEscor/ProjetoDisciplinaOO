@@ -1,0 +1,149 @@
+{
+  "pokemons": [
+    {
+      "name": "charmander",
+      "id": 4,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+      },
+      "current_hp": 109
+    },
+    {
+      "name": "charmeleon",
+      "id": 5,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png"
+      },
+      "current_hp": 128
+    },
+    {
+      "name": "exeggcute",
+      "id": 102,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/102.png"
+      },
+      "current_hp": 130
+    },
+    {
+      "name": "magmar",
+      "id": 126,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/126.png"
+      },
+      "current_hp": 135
+    },
+    {
+      "name": "electrode",
+      "id": 101,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/101.png"
+      },
+      "current_hp": 130
+    },
+    {
+      "name": "tentacruel",
+      "id": 73,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/73.png"
+      },
+      "current_hp": 150
+    },
+    {
+      "name": "vulpix",
+      "id": 37,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/37.png"
+      },
+      "current_hp": 108
+    },
+    {
+      "name": "poliwrath",
+      "id": 62,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/62.png"
+      },
+      "current_hp": 160
+    },
+    {
+      "name": "ivysaur",
+      "id": 2,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"
+      },
+      "current_hp": 130
+    },
+    {
+      "name": "rapidash",
+      "id": 78,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/78.png"
+      },
+      "current_hp": 135
+    },
+    {
+      "name": "golduck",
+      "id": 55,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/55.png"
+      },
+      "current_hp": 150
+    },
+    {
+      "name": "gengar",
+      "id": 94,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png"
+      },
+      "current_hp": 130
+    },
+    {
+      "name": "ninetales",
+      "id": 38,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/38.png"
+      },
+      "current_hp": 143
+    },
+    {
+      "name": "bellsprout",
+      "id": 69,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/69.png"
+      },
+      "current_hp": 120
+    },
+    {
+      "name": "pikachu",
+      "id": 25,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+      },
+      "current_hp": 105
+    },
+    {
+      "name": "growlithe",
+      "id": 58,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/58.png"
+      },
+      "current_hp": 125
+    },
+    {
+      "name": "bulbasaur",
+      "id": 1,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+      },
+      "current_hp": 115
+    },
+    {
+      "name": "shedinja",
+      "id": 292,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/292.png"
+      },
+      "current_hp": 71
+    }
+  ],
+  "selected_for_battle": []
+}

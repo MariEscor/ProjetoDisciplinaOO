@@ -1,8 +1,8 @@
-#config.py
+# config.py
 
 class Config:
     """
-    Classe de configuração para o jogo... 
+    Classe de configuração para o jogo Profmoon: Crônicas Acadêmicas.
 
     Esta classe encapsula as principais configurações do jogo como atributos de instância,
     permitindo que esses valores sejam gerenciados de forma orientada a objetos
@@ -14,7 +14,7 @@ class Config:
         __tam_sprite_padrao (int): Tamanho padrão em pixels para sprites, usado para consistência.
         __vel_animacao (int): Velocidade base da animação para entidades no jogo.
     """
-    def __init__(self, largura_tela: int = 1280, altura_tela: int = 720, tam_sprite_padrao: int = 64, vel_animacao: int = 2) -> None:
+    def __init__(self, largura_tela: int = 1280, altura_tela: int = 720, tam_sprite_padrao: int = 64, vel_animacao: int = 4) -> None:
         self.__largura_tela: int = largura_tela
         self.__altura_tela: int = altura_tela
         self.__tam_sprite_padrao: int = tam_sprite_padrao
