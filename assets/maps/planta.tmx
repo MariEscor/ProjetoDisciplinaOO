@@ -186,7 +186,7 @@
   <object id="989" x="976.98" y="1515.72" width="279.304" height="80.6359"/>
   <object id="990" x="1161.64" y="1460.79" width="109.84" height="65.2395"/>
   <object id="991" x="1225.24" y="1397.69" width="90.6477" height="68.5768"/>
-  <object id="992" x="1282.34" y="1325.23" width="109.503" height="81.9299"/>
+  <object id="992" x="1314.34" y="1334.23" width="109.503" height="81.9299"/>
   <object id="993" x="1359.13" y="1253.95" width="108.676" height="79.1103"/>
   <object id="994" x="1408.22" y="556.271" width="82.9613" height="701.994"/>
   <object id="995" x="1286.67" y="499.008" width="134.699" height="87.9574"/>
@@ -219,7 +219,7 @@
   <object id="1023" x="1083.33" y="629.895" width="77.9436" height="120.369"/>
   <object id="1024" x="1159.29" y="703.519" width="70.1182" height="130.887"/>
   <object id="1025" x="1214.92" y="772.468" width="56.5591" height="380.975"/>
-  <object id="1026" x="1124.62" y="1145.26" width="98.9436" height="148.417"/>
+  <object id="1026" x="1117.62" y="1124.26" width="98.9436" height="148.417"/>
   <object id="1027" x="1072.81" y="1272.64" width="64.275" height="56.0945"/>
   <object id="1028" x="886.995" y="1319.39" width="196.331" height="24.5414"/>
   <object id="1029" x="811.9" y="1337.27" width="84.2573" height="74.4377"/>
@@ -227,11 +227,11 @@
   <object id="1031" x="639.244" y="1461.32" width="126.213" height="76.6004"/>
   <object id="1032" x="587.824" y="1532.78" width="114.526" height="69.42"/>
  </objectgroup>
- <objectgroup id="5" name="Transicao" visible="0">
+ <objectgroup id="5" name="Transicao">
   <object id="1033" x="647.875" y="1952.42" width="114.917" height="3.83333">
    <properties>
-    <property name="pos" value="plant"/>
-    <property name="target" value="world"/>
+    <property name="pos" value="player_planta"/>
+    <property name="target" value="mundo"/>
    </properties>
   </object>
  </objectgroup>
