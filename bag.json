@@ -1,0 +1,23 @@
+{
+  "pokemons": [
+    {
+      "name": "squirtle",
+      "id": 7,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
+      },
+      "current_hp": 114
+    },
+    {
+      "name": "vileplume",
+      "id": 45,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/45.png"
+      },
+      "current_hp": 145
+    }
+  ],
+  "selected_for_battle": [
+    "squirtle"
+  ]
+}
