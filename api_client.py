@@ -1,15 +1,25 @@
-import requests
-from typing import Optional
+# api_client.py
 
+import requests
+from typing import Optional, Dict, Any
 
 class APIClient:
     """
     Cliente para acessar dados da PokeAPI.
+
+    Esta classe encapsula a lógica de requisições HTTP para a PokeAPI,
+    permitindo buscar dados de Pokémon e movimentos de forma organizada.
+
+    Atributos:
+        __base_url (str): A URL base da PokeAPI.
+        __session (requests.Session): A sessão HTTP para otimizar requisições.
     """
 
-    def __init__(self, base_url: str = 'https://pokeapi.co/api/v2'):
-        self.__base_url = base_url
-        self.__session = requests.Session()
+
+    def __init__(self, base_url: str = 'https://pokeapi.co/api/v2') -> None:
+        
+        self.__base_url: str = base_url
+        self.__session: requests.Session = requests.Session()
         
         # Getters e setters para a base_url, caso precise modificar externamente
     @property
@@ -32,25 +42,22 @@ class APIClient:
             raise ValueError("A nova sessão deve ser uma instância de requests.Session")
         self.__session = new_session
 
-    def fetch_pokemon_data(self, name: str) -> Optional[dict]:
-        """
-        Busca os dados de um Pokémon pelo nome.
-        """
+    def fetch_pokemon_data(self, name: str) -> Optional[Dict[str, Any]]:
         try:
-            url = f'{self.__base_url}/pokemon/{name.lower()}'
-            response = self.__session.get(url)
+            url: str = f'{self.base_url}/pokemon/{name.lower()}'
+            response = self.session.get(url)
             response.raise_for_status()
             return response.json()
         except requests.RequestException as e:
             print(f"[ERRO] Erro ao buscar dados do Pokémon '{name}': {e}")
             return None
 
-    def fetch_move_data(self, url: str) -> Optional[dict]:
+    def fetch_move_data(self, url: str) -> Optional[Dict[str, Any]]:
         """
         Busca os dados de um movimento pelo URL completo.
         """
         try:
-            response = self.__session.get(url)
+            response = self.session.get(url)
             response.raise_for_status()
             return response.json()
         except requests.RequestException as e:
@@ -61,6 +68,6 @@ class APIClient:
         """
         Encerra a sessão HTTP.
         """
-        self.__session.close()
+        self.session.close()
 
 
