@@ -184,7 +184,7 @@
 </data>
  </layer>
  <objectgroup id="6" name="Entidades">
-  <object id="162" name="Player" x="1949.33" y="3493.33">
+  <object id="162" name="Player" x="1970.55" y="3544.85">
    <properties>
     <property name="direction" value="down"/>
     <property name="pos" value="fogo"/>
@@ -2230,10 +2230,10 @@
   <object id="2472" gid="8" x="3584" y="3072" width="64" height="128"/>
   <object id="2473" gid="51" x="3520" y="3072" width="56" height="60"/>
   <object id="2474" gid="51" x="3968" y="3072" width="56" height="60"/>
-  <object id="2559" gid="10" x="1408" y="1984" width="64" height="104"/>
+  <object id="2559" gid="10" x="1472" y="2048" width="64" height="104"/>
   <object id="2560" gid="10" x="1536" y="2112" width="64" height="104"/>
   <object id="2561" gid="10" x="1600" y="2048" width="64" height="104"/>
-  <object id="2562" gid="11" x="1472" y="2048" width="64" height="128"/>
+  <object id="2562" gid="11" x="1408" y="1984" width="64" height="128"/>
   <object id="2563" gid="11" x="1664" y="1984" width="64" height="128"/>
   <object id="2564" gid="54" x="2048" y="1984" width="60" height="60"/>
   <object id="2565" gid="54" x="2304" y="1984" width="60" height="60"/>
@@ -2662,12 +2662,6 @@
    <properties>
     <property name="pos" value="mundo"/>
     <property name="target" value="fogo"/>
-   </properties>
-  </object>
-  <object id="2586" x="1536" y="1856" width="64" height="64">
-   <properties>
-    <property name="pos" value="mundo"/>
-    <property name="target" value="planta"/>
    </properties>
   </object>
  </objectgroup>
