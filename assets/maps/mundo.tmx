@@ -3,7 +3,7 @@
  <tileset firstgid="1" source="../tilesets/Grass.tsx"/>
  <tileset firstgid="4" source="../tilesets/Objetos.tsx"/>
  <tileset firstgid="57" source="../tilesets/world.tsx"/>
- <layer id="1" name="Terrain" width="86" height="86">
+ <layer id="1" name="Terrain" width="86" height="86" visible="0">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -2621,7 +2621,7 @@
   <object id="2582" x="2011.25" y="1814.75" width="365.5" height="58.5"/>
   <object id="2583" x="1391.25" y="1823.25" width="365.5" height="58.5"/>
  </objectgroup>
- <objectgroup id="7" name="Transicao">
+ <objectgroup id="7" name="Transicao" visible="0">
   <object id="1820" x="3584" y="4032" width="64" height="64">
    <properties>
     <property name="pos" value="mundo"/>
