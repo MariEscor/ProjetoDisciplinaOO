@@ -6,10 +6,19 @@
       "sprites": {
         "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
       },
-      "current_hp": 109
+      "current_hp": 0
+    },
+    {
+      "name": "ludicolo",
+      "id": 272,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/272.png"
+      },
+      "current_hp": 6
     }
   ],
   "selected_for_battle": [
-    "charmander"
+    "charmander",
+    "ludicolo"
   ]
 }

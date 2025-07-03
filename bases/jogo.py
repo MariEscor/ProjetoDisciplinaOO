@@ -81,8 +81,8 @@ class Jogo:
         pygame.mixer.music.set_volume(0.5)
         pygame.mixer.music.play(loops=-1) # Toca em loop infinito
         
-        self.som_encontro = pygame.mixer.Sound("assets/sounds/notice.wav")
-        self.som_encontro.set_volume(0.5)  # Ajuste o volume se quiser
+        self.__som_encontro = pygame.mixer.Sound("assets/sounds/notice.wav")
+        self.__som_encontro.set_volume(0.5)  # Ajuste o volume se quiser
 
 
         self.__all_sprites: AllSprites = AllSprites(self.config)
@@ -148,6 +148,16 @@ class Jogo:
         if not isinstance(value, pygame.time.Clock):
             raise TypeError("O 'clock' deve ser uma instância de pygame.time.Clock.")
         self.__clock = value
+
+    @property
+    def bag_manager(self) -> BagManager:
+        return self.__bag_manager
+    
+    @bag_manager.setter
+    def bag_manager(self, value: BagManager) -> None:
+        if not isinstance(value, BagManager):
+            raise TypeError("O 'bag_manager' deve ser uma instância da classe BagManager.")
+        self.__bag_manager = value
 
     @property
     def all_sprites(self) -> AllSprites:
@@ -508,7 +518,7 @@ class Jogo:
             if area.rect.colliderect(player_hitbox):
                 if random.random() < 0.005:  # 0,5% de chance
                     print("Encontro iniciado!")
-                    self.som_encontro.play()
+                    self.__som_encontro.play()
 
                     ''' # Tipo do bioma (opcionalmente usado para lógica futura)
                     tipo_bioma = area.biome.lower()'''
