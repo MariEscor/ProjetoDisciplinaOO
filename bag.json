@@ -1,0 +1,23 @@
+{
+  "pokemons": [
+    {
+      "name": "charmander",
+      "id": 4,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+      },
+      "current_hp": 36
+    },
+    {
+      "name": "raikou",
+      "id": 243,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/243.png"
+      },
+      "current_hp": 160
+    }
+  ],
+  "selected_for_battle": [
+    "charmander"
+  ]
+}
