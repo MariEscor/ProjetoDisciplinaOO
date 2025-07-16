@@ -17,5 +17,3 @@ class Move:
             self.name = "Struggle"
             self.power = 50
             self.type = "normal"
-            
-    
