@@ -1,4 +1,3 @@
-#game_scene.py
 # game_scene.py
 import pygame
 
