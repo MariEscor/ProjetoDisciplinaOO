@@ -21,6 +21,8 @@ POKEMONS_ENCONTRAVEIS = [
         "misdreavus", "mimikyu", "banette", "dusclops", "lunala"
 ]
 
+
+
 def gerar_pokemon_encontro():
     """
     Gera um Pokémon aleatório que não esteja na bag.
