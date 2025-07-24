@@ -18,7 +18,7 @@ SOM_CLIQUE.set_volume(0.5)
 
 
 class BagWindow:
-    COR_TRANSLUCIDA = (0, 0, 0, 180)
+    COR_TRANSLUCIDA = (0, 0, 0, 180) #okok
     COR_JANELA = (30, 30, 30, 240)
     COR_BORDA_JANELA = (0, 180, 255) 
     COR_SLOT = (255, 255, 255, 120)
