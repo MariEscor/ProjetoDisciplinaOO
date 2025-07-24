@@ -1,5 +1,7 @@
 # api_client.py
 
+#okay em no outro GIT
+
 import requests
 from typing import Optional, Dict, Any
 
