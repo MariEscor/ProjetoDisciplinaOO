@@ -1,0 +1,15 @@
+{
+  "pokemons": [
+    {
+      "name": "charmander",
+      "id": 4,
+      "sprites": {
+        "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+      },
+      "current_hp": 109
+    }
+  ],
+  "selected_for_battle": [
+    "charmander"
+  ]
+}
